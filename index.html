@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>셀렉터 사용</title>
+    <style>
+        /*태그선택자*/
+        /*html 태그명을 사용하는 선택자*/
+        h3, li {
+            color : brown;
+        }
+        /*클래스선택자*/
+        /*html 태그의 속성 중 class의 값을 사용하여 html 태그를 선택하는 선택자*/
+        /*class의 값은 여러개를 사용할 수 있음*/
+        /*하나의 class명을 여러개의 태그가 동시에 사용할 수 있음*/
+        .wearning{
+            color : red;
+        }
+        /*class 선택자는 다른 선택자와 함께 사용하는 것이 가능*/
+        body.main{
+            background : aliceblue;
+        }
+        /*자손 셀렉터 첫번째로 지정한 태그에 포함되어 있는 html 태그 증 지정한 선택하는 선택하는 선택자 */
+        /* 첫번째로 지정한 태그에 포함되어 있기만 하면 몇 단계 아래에 있던지 상관안함 */
+        /* 기호는 공백 기호 사용함*/
+        ul strong{color : dodgerblue;}
+
+        /* 자식 셀렉터 첫번째로 지정한 태그에 포함되어 있는 직계 자식 태그 중 지정한 태그를 선택하는 선택자*/
+        /* 기호는 > 사용함 */
+        div>strong{background : yellow;}
+
+        a{ display: block;}
+        
+        a[target="_blank"]{
+            font-size : 30px;
+            font-weight : bold;
+        }
+        
+        /*가상 선택자 태그의 상태에 따라서 스타일을 적용시킬 태그를 선택하는 선택자*/
+        /*지정한 태그 뒤에 가상선택자명을 입력하여 사용 (:hover많이 사용)*/
+        h3::first-letter{
+            color: red;
+        }
+        li:hover{
+            background: darkolivegreen;
+        }
+
+    </style>
+</head>
+<body class="main">
+    <h3>Web Programming</h3>
+    <hr>
+    <div>
+        <div>2학기 <strong>학습 내용</strong></div>
+        <ul>
+            <li>HRML5</li>
+            <li><strong>CSS</strong></li>
+            <li>JAVASCRIPT</li>
+        </ul>
+        <div class="wearning">60점 이하는 F! </div>
+        <a href="#" target="_blank">속성 선택자 지정된 하이퍼링크</a><br>
+        <a href="#" target="_self">속성 선택자 지정되지 않은 하이퍼링크</a>
+    </div>
+</body>
+</html>
